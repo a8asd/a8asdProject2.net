@@ -8,7 +8,7 @@ namespace TheProject.Test.Unit
         [Test]
         public void ThisIsJustAPlaceholder()
         {
-            Assert.IsTrue(false);
+            Assert.Fail("All your git are belong to us");
         }
     }
 }
