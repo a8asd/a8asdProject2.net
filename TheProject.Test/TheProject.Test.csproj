@@ -61,7 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddBookToCart.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Checkout.feature.cs">
+    <Compile Include="Features\Checkout.feature.cs"/>
     <Compile Include="Features\SearchBooks.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
