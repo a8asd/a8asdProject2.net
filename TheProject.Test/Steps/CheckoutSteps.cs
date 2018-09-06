@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using TechTalk.SpecFlow;
 using TheProject.Controller;
 using TheProject.Model;
@@ -34,7 +35,7 @@ namespace TheProject.Test.Steps
         [Then(@"an error message ""(.*)"" should be displayed")]
         public void ThenAnErrorMessageShouldBeDisplayed(string p0)
         {
-            
+            Assert.AreEqual(p0, checkoutProcessor.Output);
         }
     }
 }
