@@ -56,20 +56,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\DummyFeature.feature.cs">
+    <Compile Include="Features\SearchBooks.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DummyFeature.feature</DependentUpon>
+      <DependentUpon>SearchBooks.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\Book.cs" />
+    <Compile Include="Steps\Library.cs" />
+    <Compile Include="Steps\SearchBookSteps.cs" />
     <Compile Include="Steps\StepDefinition1.cs" />
+    <Compile Include="Steps\Stock.cs" />
+    <Compile Include="Steps\StockItem.cs" />
     <Compile Include="Unit\DummyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\DummyFeature.feature">
+    <None Include="Features\SearchBooks.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DummyFeature.feature.cs</LastGenOutput>
+      <LastGenOutput>SearchBooks.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
