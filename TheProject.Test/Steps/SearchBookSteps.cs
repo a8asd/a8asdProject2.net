@@ -18,18 +18,7 @@ namespace TheProject.Test.Steps
 
         private List<StockItem> MapToStockList(Table table)
         {
-            return (from item in table.CreateSet<(string Id, string Title, string ISBN, string Status)>().ToList()
-                select
-                new StockItem
-                {
-                    Book = new Book
-                    {
-                        BookId = item.Id,
-                        ISBN = item.ISBN,
-                        Title = item.Title
-                    },
-                    Status = item.Status
-                }).ToList();
+            return new List<StockItem>();
         }
 
         [Given(@"we have the following books in the stock:")]
