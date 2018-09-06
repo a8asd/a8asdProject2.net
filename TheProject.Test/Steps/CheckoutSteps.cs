@@ -10,7 +10,7 @@ namespace TheProject.Test.Steps
     {
         private Cart cart;
         private Member libraryMember;
-        private CheckoutProcessor checkoutProcessor;
+        private CheckoutProcessor checkoutProcessor = new CheckoutProcessor();
 
         [Given(@"I have a cart with (.*) items")]
         public void GivenIHaveACartWithItems(int p0)
