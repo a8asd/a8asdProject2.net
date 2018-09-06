@@ -34,7 +34,7 @@ namespace TheProject.Test.Steps
         [Then(@"an error message ""(.*)"" should be displayed")]
         public void ThenAnErrorMessageShouldBeDisplayed(string p0)
         {
-            ScenarioContext.Current.Pending();
+            
         }
     }
 }

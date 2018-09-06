@@ -7,7 +7,6 @@ namespace TheProject.Controller
     {
         public void Checkout(Cart cart)
         {
-            throw new NotImplementedException();
         }
     }
 }
