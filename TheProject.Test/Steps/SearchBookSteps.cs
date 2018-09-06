@@ -6,6 +6,7 @@ using System.Reflection;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using TheProject.Model;
 
 namespace TheProject.Test.Steps
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TheProject.Test.Steps
+namespace TheProject.Model
 {
     public class Stock
     {

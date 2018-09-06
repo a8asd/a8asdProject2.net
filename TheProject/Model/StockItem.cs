@@ -1,4 +1,4 @@
-﻿namespace TheProject.Test.Steps
+﻿namespace TheProject.Model
 {
     public class StockItem
     {
