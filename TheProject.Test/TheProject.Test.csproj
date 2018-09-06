@@ -61,8 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddBookToCart.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Checkout.feature.cs" />
-    <Compile Include="Features\Checkout1.feature.cs">
+    <Compile Include="Features\Checkout.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Checkout.feature</DependentUpon>
@@ -85,7 +84,7 @@
     </None>
     <None Include="Features\Checkout.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Checkout1.feature.cs</LastGenOutput>
+      <LastGenOutput>Checkout.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\SearchBooks.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
