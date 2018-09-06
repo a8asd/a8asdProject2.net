@@ -62,12 +62,8 @@
       <DependentUpon>SearchBooks.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\Book.cs" />
-    <Compile Include="Steps\Library.cs" />
     <Compile Include="Steps\SearchBookSteps.cs" />
     <Compile Include="Steps\StepDefinition1.cs" />
-    <Compile Include="Steps\Stock.cs" />
-    <Compile Include="Steps\StockItem.cs" />
     <Compile Include="Unit\DummyTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,7 +74,12 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TheProject\TheProject.csproj">
+      <Project>{e14d0056-fb16-43f6-a6a1-e00198cb4ee8}</Project>
+      <Name>TheProject</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
