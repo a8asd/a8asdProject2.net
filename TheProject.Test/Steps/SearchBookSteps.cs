@@ -60,7 +60,7 @@ namespace TheProject.Test.Steps
             
         }
 
-        [When(@"I wnat to add the book (.*) to my cart")]
+        [When(@"I want to add the book (.*) to my cart")]
         public void WhenIWnatToAddTheBookLordOfTheRingstoMyCart(string bookname)
         {
         }
@@ -68,6 +68,7 @@ namespace TheProject.Test.Steps
         [Then(@"My cart should not be empty anymore")]
         public void ThenMyCartShouldNotBeEmptyAnymore()
         {
+            //Assert.IsNotEmpty(cart.Books);
         }
 
     }
