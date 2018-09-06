@@ -52,5 +52,24 @@ namespace TheProject.Test.Steps
                 Assert.AreEqual(items[i].Book.BookId, library.Stock.Items[i].Book.BookId);
             }
         }
+
+        [Given(@"I have an empty cart")]
+        public void GivenIHaveAnEmptyCart()
+        {
+            
+        }
+
+        [When(@"I wnat to add the book (.*) to my cart")]
+        public void WhenIWnatToAddTheBookLordOfTheRingstoMyCart()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"My cart should not be empty anymore")]
+        public void ThenMyCartShouldNotBeEmptyAnymore()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
