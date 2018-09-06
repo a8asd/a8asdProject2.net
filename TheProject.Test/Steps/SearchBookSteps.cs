@@ -15,6 +15,7 @@ namespace TheProject.Test.Steps
     {
         private Library library = new Library();
         private List<StockItem> allBooks;
+        private Cart cart = new Cart();
 
         private List<StockItem> MapToStockList(Table table)
         {
@@ -46,18 +47,19 @@ namespace TheProject.Test.Steps
         [Given(@"I have an empty cart")]
         public void GivenIHaveAnEmptyCart()
         {
-            
+            cart.Books.Clear();
         }
 
         [When(@"I want to add the book (.*) to my cart")]
         public void WhenIWnatToAddTheBookLordOfTheRingstoMyCart(string bookname)
         {
+            cart.Books.Add(new Book(){Title = bookname});
         }
 
         [Then(@"My cart should not be empty anymore")]
         public void ThenMyCartShouldNotBeEmptyAnymore()
         {
-            //Assert.IsNotEmpty(cart.Books);
+            Assert.IsNotEmpty(cart.Books);
         }
 
     }
