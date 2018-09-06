@@ -14,6 +14,8 @@ namespace TheProject.Controller
                 Output = "No books in cart";
                 return;
             }
+
+            Output = "Book(s) will be delivered";
         }
     }
 }

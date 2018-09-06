@@ -17,6 +17,11 @@ namespace TheProject.Test.Steps
         public void GivenIHaveACartWithItems(int p0)
         {
             cart = new Cart();
+
+            for (var i = 0; i < p0; i++)
+            {
+                cart.Books.Add(new Book());
+            }
         }
 
         [Given(@"I am a library member")]
@@ -32,8 +37,8 @@ namespace TheProject.Test.Steps
             checkoutProcessor.Checkout(cart);
         }
 
-        [Then(@"an error message ""(.*)"" should be displayed")]
-        public void ThenAnErrorMessageShouldBeDisplayed(string p0)
+        [Then(@"an output message ""(.*)"" should be displayed")]
+        public void ThenAnOutputMessageShouldBeDisplayed(string p0)
         {
             Assert.AreEqual(p0, checkoutProcessor.Output);
         }
