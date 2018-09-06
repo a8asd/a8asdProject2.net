@@ -4,6 +4,11 @@ namespace TheProject.Model
 {
     public class Stock
     {
-        public List<StockItem> Items { get; set; } = new List<StockItem>();
+        public List<StockItem> Items { get; set; }
+
+        public Stock()
+        {
+            Items = new List<StockItem>();
+        }
     }
 }

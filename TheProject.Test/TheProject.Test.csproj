@@ -56,11 +56,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Steps\CheckoutSteps.cs" />
-    <Compile Include="Features\Checkout.feature.cs">
+    <Compile Include="Features\AddBookToCart.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Checkout.feature</DependentUpon>
+      <DependentUpon>AddBookToCart.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\SearchBooks.feature.cs">
       <AutoGen>True</AutoGen>
@@ -69,14 +68,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\SearchBookSteps.cs" />
-    <Compile Include="Steps\StepDefinition1.cs" />
     <Compile Include="Unit\DummyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Checkout.feature">
+    <None Include="Features\AddBookToCart.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Checkout.feature.cs</LastGenOutput>
+      <LastGenOutput>AddBookToCart.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\SearchBooks.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

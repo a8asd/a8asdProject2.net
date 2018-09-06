@@ -61,15 +61,13 @@ namespace TheProject.Test.Steps
         }
 
         [When(@"I wnat to add the book (.*) to my cart")]
-        public void WhenIWnatToAddTheBookLordOfTheRingstoMyCart()
+        public void WhenIWnatToAddTheBookLordOfTheRingstoMyCart(string bookname)
         {
-            ScenarioContext.Current.Pending();
         }
 
         [Then(@"My cart should not be empty anymore")]
         public void ThenMyCartShouldNotBeEmptyAnymore()
         {
-            ScenarioContext.Current.Pending();
         }
 
     }

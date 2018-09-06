@@ -4,6 +4,11 @@ namespace TheProject.Model
 {
     public class Cart
     {
-        public IList<Book> Books { get; set; } = new List<Book>();
+        public IList<Book> Books { get; set; }
+
+        public Cart()
+        {
+            Books = new List<Book>();
+        }
     }
 }

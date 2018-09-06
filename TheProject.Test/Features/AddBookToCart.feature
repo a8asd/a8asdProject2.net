@@ -1,11 +1,10 @@
 ﻿Feature: AddBookToCart
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to loan a book from library
+	As a member
+	I want to be able to add book into cart
 
 @mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Scenario: Add boom to cart
+	Given I have an empty cart
+	When I wnat to add the book clean code to my cart
+	Then My cart should not be empty anymore
