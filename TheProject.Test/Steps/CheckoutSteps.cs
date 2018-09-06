@@ -1,5 +1,6 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using TheProject.Controller;
 using TheProject.Model;
 
 namespace TheProject.Test.Steps
@@ -8,6 +9,7 @@ namespace TheProject.Test.Steps
     public class CheckoutSteps
     {
         private Cart cart;
+        private Member libraryMember;
         private CheckoutProcessor checkoutProcessor;
 
         [Given(@"I have a cart with (.*) items")]
@@ -21,14 +23,14 @@ namespace TheProject.Test.Steps
         {
             libraryMember = new Member();
         }
-s
+
 
         [When(@"I press checkout")]
         public void WhenIPressCheckout()
         {
             checkoutProcessor.Checkout(cart);
         }
-        
+
         [Then(@"an error message ""(.*)"" should be displayed")]
         public void ThenAnErrorMessageShouldBeDisplayed(string p0)
         {
