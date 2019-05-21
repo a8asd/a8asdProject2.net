@@ -7,7 +7,7 @@ namespace TheProject.Test.Unit
         [Test]
         public void SanityClause()
         {
-            Assert.IsTrue(true);
+            Assert.IsTrue(false);
         }
     }
 }
