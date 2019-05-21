@@ -18,9 +18,9 @@ namespace TheProject.Test.Features
         }
         
         [Given(@"(.*) is an available driver")]
-        public void GivenAnAvailableDriver(string name)
+        public void GivenAnAvailableDriver(string driverName)
         {
-            charlie = new Driver {Name = name};
+            charlie = new Driver {Name = driverName};
         }
             
         [When(@"(.*) books a ride")]
