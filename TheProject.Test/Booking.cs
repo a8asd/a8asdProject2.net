@@ -3,8 +3,6 @@
     internal class Booking
     {
         public Driver Driver;
-        public Customer Customer;
-  
- 
+        public Customer Customer; 
     }
 }

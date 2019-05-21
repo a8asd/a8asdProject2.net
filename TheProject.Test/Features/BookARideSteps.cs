@@ -23,8 +23,8 @@ namespace TheProject.Test.Features
             charlie = new Driver {Name = name};
         }
             
-        [When(@"Pat books a ride")]
-        public void WhenBookARide()
+        [When(@"(.*) books a ride")]
+        public void WhenCustomerBooksARide(string customerName)
         {
             booking = new Booking {Customer = pat, Driver=charlie};
         }
