@@ -7,25 +7,24 @@ namespace TheProject.Test.Features
     [Binding]
     public class BookARideSteps
     {
-        // ReSharper disable once InconsistentNaming
-        private readonly LuberContext LuberContext = new LuberContext();
+        private readonly LuberContext _luberContext = new LuberContext();
 
         [Given(@"(.*) is a registered customer")]
-        public void GivenARegisteredCustomer(string name)
+        public void GivenARegisteredCustomer(string customerName)
         {
-            LuberContext.AddCustomer(name);
+            _luberContext.CreateCustomer(customerName);
         }
 
         [Given(@"(.*) is an available driver")]
         public void GivenAnAvailableDriver(string driverName)
         {
-            LuberContext.AddDriver(driverName);
+            _luberContext.CreateDriver(driverName);
         }
 
         [When(@"(.*) books a ride with (.*)")]
         public void WhenCustomerBooksARide(string customerName, string driverName)
         {
-            LuberContext.CreateBooking(customerName, driverName);
+            _luberContext.BookRide(customerName, driverName);
         }
 
         [Then(@"these are the bookings")]
@@ -33,7 +32,7 @@ namespace TheProject.Test.Features
         {
             IList<BookingItem> bookingList = new List<BookingItem>();
 
-            foreach (var booking in LuberContext.Bookings)
+            foreach (var booking in _luberContext.bookings)
             {
                 bookingList.Add(new BookingItem{
                     Customer = booking.Customer.Name,
