@@ -15,9 +15,9 @@ namespace TheProject.Test.Features
         private Dictionary<string, Driver> drivers = new Dictionary<string, Driver>();
 
         [Given(@"(.*) is a registered customer")]
-        public void GivenARegisteredCustomer(string customerName)
+        public void GivenARegisteredCustomer(string name)
         {
-            customers[customerName] = new Customer {Name = customerName};
+            customers[name] = new Customer {Name = name};
         }
         
         [Given(@"(.*) is an available driver")]
@@ -50,12 +50,28 @@ namespace TheProject.Test.Features
 
             table.CompareToSet(bookingList);
         }
-
     }
 
     internal class BookingItem
     {
         public string Customer { get; internal set; }
         public string Driver { get; internal set; }
+    }
+
+
+    internal class Driver
+    {
+        public string Name { get; set; }
+    }
+
+    internal class Booking
+    {
+        public Customer Customer { get; set; }
+        public Driver Driver { get; set; }
+    }
+
+    internal class Customer
+    {
+        public string Name { get; set; }
     }
 }

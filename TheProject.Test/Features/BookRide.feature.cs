@@ -78,13 +78,13 @@ namespace TheProject.Test.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
-testRunner.Given("Pat is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("Vidya is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
 testRunner.And("David is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
 testRunner.And("Charlie is an available driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-testRunner.When("Pat books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("Vidya books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
 testRunner.And("David books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -93,7 +93,7 @@ testRunner.And("David books a ride with Charlie", ((string)(null)), ((TechTalk.S
                         "customer"});
             table1.AddRow(new string[] {
                         "Charlie",
-                        "Pat"});
+                        "Vidya"});
             table1.AddRow(new string[] {
                         "Charlie",
                         "David"});
