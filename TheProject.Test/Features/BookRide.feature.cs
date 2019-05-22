@@ -78,13 +78,13 @@ namespace TheProject.Test.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
-testRunner.Given("Pat is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("Vidya is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
 testRunner.And("Charlie is an available driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.When("Pat books a ride", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("Vidya books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
-testRunner.Then("Charlie is booked to Pat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Charlie is booked to Vidya", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
