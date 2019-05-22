@@ -54,12 +54,12 @@ namespace TheProject.Test.Features
         [Then(@"these are the offers")]
         public void ThenTheseAreTheOffers(Table table)
         {
-            Assert.IsTrue(_luberContext.RequestedOffers.Any());
+            Assert.IsTrue(_luberContext.Offers.Any());
 
             List<DriverItem> driverList = new List<DriverItem>();
-            for(int i =0; i < _luberContext.RequestedOffers.Count; i++) { 
+            for(int i =0; i < _luberContext.Offers.Count; i++) { 
                 driverList.Add(new DriverItem {
-                    Driver = _luberContext.RequestedOffers[i].Name
+                    Driver = _luberContext.Offers[i].Name
                 });
             }
 
