@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TheProject.Test.Features
 {
     public class LuberContext
     {
         public IList<Booking> Bookings = new List<Booking>();
-        private readonly Dictionary<string, Customer> Customers = new Dictionary<string, Customer>();
-        private readonly Dictionary<string, Driver> Drivers = new Dictionary<string, Driver>();
+        public readonly Dictionary<string, Customer> Customers = new Dictionary<string, Customer>();
+        public readonly Dictionary<string, Driver> Drivers = new Dictionary<string, Driver>();
+        public IList<Driver> Offers = new List<Driver>();
+        public IList<Driver> RequestedOffers = new List<Driver>();
 
         public void AddCustomer(string name)
         {
@@ -16,6 +19,7 @@ namespace TheProject.Test.Features
         public void AddDriver(string driverName)
         {
             Drivers[driverName] = new Driver {Name = driverName};
+            Offers.Add(Drivers[driverName]);
         }
 
         public void CreateBooking(string customerName, string driverName)
@@ -25,6 +29,11 @@ namespace TheProject.Test.Features
                 Customer = Customers[customerName],
                 Driver = Drivers[driverName]
             });
+        }
+
+        public void RequestOffers()
+        {
+            RequestedOffers = Offers;
         }
     }
 }
