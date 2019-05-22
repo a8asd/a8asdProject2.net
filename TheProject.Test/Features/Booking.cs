@@ -3,6 +3,6 @@
     internal class Booking
     {
         public Customer Customer { get; internal set; }
-        public Customer Driver { get; internal set; }
+        public Driver Driver { get; internal set; }
     }
 }
