@@ -12,19 +12,19 @@ namespace TheProject.Test.Features
         [Given(@"(.*) is a registered customer")]
         public void GivenARegisteredCustomer(string customerName)
         {
-            _luberContext.CreateCustomer(customerName);
+            _luberContext.AddCustomer(customerName);
         }
 
         [Given(@"(.*) is an available driver")]
         public void GivenAnAvailableDriver(string driverName)
         {
-            _luberContext.CreateDriver(driverName);
+            _luberContext.AddDriver(driverName);
         }
 
         [When(@"(.*) books a ride with (.*)")]
         public void WhenCustomerBooksARide(string customerName, string driverName)
         {
-            _luberContext.BookRide(customerName, driverName);
+            _luberContext.CreateBooking(customerName, driverName);
         }
 
         [Then(@"these are the bookings")]
@@ -32,7 +32,7 @@ namespace TheProject.Test.Features
         {
             IList<BookingItem> bookingList = new List<BookingItem>();
 
-            foreach (var booking in _luberContext.bookings)
+            foreach (var booking in _luberContext.Bookings)
             {
                 bookingList.Add(new BookingItem{
                     Customer = booking.Customer.Name,
