@@ -82,7 +82,7 @@ testRunner.Given("Pat is a registered customer", ((string)(null)), ((TechTalk.Sp
 #line 8
 testRunner.And("Charlie is an available driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.When("Pat books a ride", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("Pat books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
 testRunner.Then("Charlie is booked to Pat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

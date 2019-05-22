@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -7,49 +8,36 @@ namespace TheProject.Test.Features
     [Binding]
     public class BookARideSteps
     {
-        private Customer pat;
         private Booking booking;
-        private Driver charlie;
+        private Dictionary<string, Customer> customers = new Dictionary<string, Customer>();
+        private Dictionary<string, Customer> drivers = new Dictionary<string, Customer>();
 
         [Given(@"(.*) is a registered customer")]
-        public void GivenARegisteredCustomer(string name)
+        public void GivenARegisteredCustomer(string customerName)
         {
-            pat = new Customer {Name = name};
+            customers[customerName] = new Customer {Name = customerName};
         }
         
         [Given(@"(.*) is an available driver")]
         public void GivenAnAvailableDriver(string driverName)
         {
-            charlie = new Driver {Name = driverName};
+            drivers[driverName] = new Driver {Name = driverName};
         }
             
-        [When(@"(.*) books a ride")]
-        public void WhenCustomerBooksARide(string customerName)
+        [When(@"(.*) books a ride with (.*)")]
+        public void WhenCustomerBooksARide(string customerName, string driverName)
         {
-            booking = new Booking {Customer = pat, Driver=charlie};
+            booking = new Booking {
+                Customer = customers[customerName],
+                Driver = drivers[driverName]
+            };
         }
         
-        [Then(@"Charlie is booked to Pat")]
-        public void ThenCharlieIsBookedToPat()
+        [Then(@"(.*) is booked to (.*)")]
+        public void ThenDriverIsBookedToCustomer(string driverName, string customerName)
         {
-            Assert.AreEqual(pat, booking.Customer);
-            Assert.AreEqual(charlie, booking.Driver);
+            Assert.AreEqual(customers[customerName], booking.Customer);
+            Assert.AreEqual(drivers[driverName], booking.Driver);
         }
-    }
-
-    internal class Driver
-    {
-        public string Name { get; set; }
-    }
-
-    internal class Booking
-    {
-        public Customer Customer { get; set; }
-        public Driver Driver { get; set; }
-    }
-
-    internal class Customer
-    {
-        public string Name { get; set; }
     }
 }
