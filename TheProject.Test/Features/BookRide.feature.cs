@@ -69,23 +69,35 @@ namespace TheProject.Test.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 5
+#line 6
+testRunner.Given("Pat is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 7
+testRunner.And("Charlie is an available driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Pat books a ride with Charlie")]
         public virtual void PatBooksARideWithCharlie()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pat books a ride with Charlie", null, ((string[])(null)));
-#line 6
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
-testRunner.Given("Vidya is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
-testRunner.And("David is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-testRunner.And("Charlie is an available driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 5
+this.FeatureBackground();
 #line 10
-testRunner.When("Vidya books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("Vidya is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
+testRunner.And("David is a registered customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+testRunner.And("Charlie is an available driver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+testRunner.When("Vidya books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
 testRunner.And("David books a ride with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -97,8 +109,31 @@ testRunner.And("David books a ride with Charlie", ((string)(null)), ((TechTalk.S
             table1.AddRow(new string[] {
                         "Charlie",
                         "David"});
-#line 12
+#line 15
 testRunner.Then("these are the bookings", ((string)(null)), table1, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Pat requests offers")]
+        public virtual void PatRequestsOffers()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pat requests offers", null, ((string[])(null)));
+#line 20
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 21
+testRunner.When("Pat requests offers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "driver"});
+            table2.AddRow(new string[] {
+                        "Charlie"});
+#line 22
+testRunner.Then("these are the offers", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
