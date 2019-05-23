@@ -11,16 +11,22 @@ namespace TheProject.Test.Features
     {
         private readonly LuberContext _luberContext = new LuberContext();
 
+        [Given(@"TargetRadius is (.*)")]
+        public void GivenTargetRadiusIs(int targetRadius)
+        {
+            _luberContext.TargetRadius = targetRadius;
+        }
+
         [Given(@"(.*) is a registered customer")]
         public void GivenARegisteredCustomer(string customerName)
         {
             _luberContext.AddCustomer(customerName);
         }
 
-        [Given(@"(.*) is an available driver")]
-        public void GivenAnAvailableDriver(string driverName)
+        [Given(@"(.*) is an available driver at (.*), (.*)")]
+        public void GivenIsAnAvailableDriverAt(string driverName, int x, int y)
         {
-            _luberContext.AddDriver(driverName);
+            _luberContext.AddDriver(driverName, x, y);
         }
 
         [When(@"(.*) books a ride with (.*)")]
@@ -45,10 +51,10 @@ namespace TheProject.Test.Features
             table.CompareToSet(bookingList);
         }
 
-        [When(@"Pat requests offers")]
-        public void WhenPatRequestsOffers()
+        [When(@"(.*) requests offers from (.*), (.*)")]
+        public void WhenPatRequestsOffersFrom(string customerName, int x, int y)
         {
-            _luberContext.RequestOffers();
+            _luberContext.RequestOffers(x, y);
         }
 
         [Then(@"these are the offers")]

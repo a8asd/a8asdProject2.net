@@ -10,14 +10,16 @@ namespace TheProject.Test.Features
         public readonly Dictionary<string, Driver> Drivers = new Dictionary<string, Driver>();
         public IList<Driver> Offers = new List<Driver>();
 
+        public int TargetRadius { get; internal set; }
+
         public void AddCustomer(string name)
         {
             Customers[name] = new Customer {Name = name};
         }
 
-        public void AddDriver(string driverName)
+        public void AddDriver(string driverName, int x, int y)
         {
-            Drivers[driverName] = new Driver {Name = driverName};
+            Drivers[driverName] = new Driver {Name = driverName, LocationX =x, LocationY =y};
         }
 
         public void CreateBooking(string customerName, string driverName)
@@ -29,11 +31,14 @@ namespace TheProject.Test.Features
             });
         }
 
-        public void RequestOffers()
+        public void RequestOffers(int x, int y)
         {
             foreach (var driver in Drivers.Values)
             {
-                Offers.Add(driver);
+                if (Math.Sqrt(Math.Pow((driver.LocationX - x), 2) + Math.Pow((driver.LocationY - y), 2)) <= this.TargetRadius)
+                {
+                    Offers.Add(driver);
+                }
             }
         }
     }
