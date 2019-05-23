@@ -65,7 +65,8 @@ namespace TheProject.Test.Features
             List<DriverItem> driverList = new List<DriverItem>();
             for(int i =0; i < _luberContext.Offers.Count; i++) { 
                 driverList.Add(new DriverItem {
-                    Driver = _luberContext.Offers[i].Name
+                    Driver = _luberContext.Offers[i].Name,
+                    Distance = _luberContext.Offers[i].distance
                 });
             }
 
@@ -76,6 +77,7 @@ namespace TheProject.Test.Features
     internal class DriverItem
     {
         public string Driver { get;  set; }
+        public object Distance { get; set; }
     }
 
     internal class BookingItem

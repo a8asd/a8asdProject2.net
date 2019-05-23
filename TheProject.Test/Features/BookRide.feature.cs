@@ -131,9 +131,11 @@ this.FeatureBackground();
  testRunner.When("Pat requests offers from 10, 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "driver"});
+                        "driver",
+                        "distance"});
             table2.AddRow(new string[] {
-                        "Charlie"});
+                        "Charlie",
+                        "0"});
 #line 25
  testRunner.Then("these are the offers", ((string)(null)), table2, "Then ");
 #line hidden

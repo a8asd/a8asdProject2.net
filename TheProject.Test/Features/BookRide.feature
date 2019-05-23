@@ -23,5 +23,5 @@ Scenario: Pat books a ride with Charlie
 Scenario: Pat requests offers
 	When Pat requests offers from 10, 10
 	Then these are the offers
-		| driver  |
-		| Charlie |
+		| driver  | distance |
+		| Charlie | 0      |
