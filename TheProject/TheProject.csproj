@@ -44,6 +44,7 @@
     <Compile Include="Booking.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Driver.cs" />
+    <Compile Include="Offer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

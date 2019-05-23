@@ -63,10 +63,11 @@ namespace TheProject.Test.Features
             Assert.IsTrue(_luberContext.Offers.Any());
 
             List<DriverItem> driverList = new List<DriverItem>();
-            for(int i =0; i < _luberContext.Offers.Count; i++) { 
+            foreach (var offer in _luberContext.Offers)
+            {
                 driverList.Add(new DriverItem {
-                    Driver = _luberContext.Offers[i].Name,
-                    Distance = _luberContext.Offers[i].distance
+                    Driver = offer.Driver.Name,
+                    Distance = offer.Distance
                 });
             }
 

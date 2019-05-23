@@ -24,4 +24,4 @@ Scenario: Pat requests offers
 	When Pat requests offers from 10, 10
 	Then these are the offers
 		| driver  | distance |
-		| Charlie | 0      |
+		| Charlie | 127      |

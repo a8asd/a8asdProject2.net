@@ -8,7 +8,7 @@ namespace TheProject.Test.Features
         public IList<Booking> Bookings = new List<Booking>();
         public readonly Dictionary<string, Customer> Customers = new Dictionary<string, Customer>();
         public readonly Dictionary<string, Driver> Drivers = new Dictionary<string, Driver>();
-        public IList<Driver> Offers = new List<Driver>();
+        public readonly IList<Offer> Offers = new List<Offer>();
 
         public int TargetRadius { get; internal set; }
 
@@ -35,9 +35,13 @@ namespace TheProject.Test.Features
         {
             foreach (var driver in Drivers.Values)
             {
-                if (Math.Sqrt(Math.Pow((driver.LocationX - x), 2) + Math.Pow((driver.LocationY - y), 2)) <= this.TargetRadius)
+                var distance = (int) Math.Sqrt(Math.Pow((driver.LocationX - x), 2) + Math.Pow((driver.LocationY - y), 2));
+                if (distance <= this.TargetRadius)
                 {
-                    Offers.Add(driver);
+                    Offers.Add(new Offer{
+                        Driver = driver,
+                        Distance = distance
+                    });
                 }
             }
         }

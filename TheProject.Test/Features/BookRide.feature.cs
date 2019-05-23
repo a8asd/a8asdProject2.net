@@ -135,7 +135,7 @@ this.FeatureBackground();
                         "distance"});
             table2.AddRow(new string[] {
                         "Charlie",
-                        "0"});
+                        "127"});
 #line 25
  testRunner.Then("these are the offers", ((string)(null)), table2, "Then ");
 #line hidden
