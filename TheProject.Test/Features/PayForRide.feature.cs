@@ -83,22 +83,60 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Given("Pat has travelled 10 miles with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("the rate is £2 per mile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Pat has travelled 25 miles with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.When("Pat pays for the ride", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Pat has travelled 35 miles with Charlie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "payee",
                         "driver",
+                        "distance"});
+            table1.AddRow(new string[] {
+                        "Pat",
+                        "Charlie",
+                        "10"});
+            table1.AddRow(new string[] {
+                        "Pat",
+                        "Charlie",
+                        "25"});
+            table1.AddRow(new string[] {
+                        "Pat",
+                        "Charlie",
+                        "35"});
+#line 11
+ testRunner.Given("these journeys", ((string)(null)), table1, "Given ");
+#line 16
+ testRunner.And("the rate is £2 per mile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "miles",
+                        "amount per mile"});
+            table2.AddRow(new string[] {
+                        "10",
+                        "2.00"});
+            table2.AddRow(new string[] {
+                        "20",
+                        "1.50"});
+            table2.AddRow(new string[] {
+                        "30",
+                        "1"});
+#line 17
+ testRunner.And("the rates are", ((string)(null)), table2, "And ");
+#line 22
+ testRunner.When("Pat pays for the ride", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "payee",
+                        "driver",
                         "distance",
                         "amount"});
-            table1.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Pat",
                         "Charlie",
                         "10",
                         "20.00"});
-#line 11
- testRunner.Then("these are the invoices in the system", ((string)(null)), table1, "Then ");
+#line 23
+ testRunner.Then("these are the invoices in the system", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -13,6 +13,7 @@ namespace TheProject.Test.Features
         private double _ratePerMile;
         private string _customer;
         private string _driverName;
+        public IList<Journey> bookedJournes { get; set; } = new List<Journey>();
 
         [Given(@"(.*) has travelled (.*) miles with (.*)")]
         public void GivenPatHasTravelledMilesWithCharlie(string passenger, int miles, string driverName)
@@ -20,6 +21,11 @@ namespace TheProject.Test.Features
             _distance = miles;
             _customer = passenger;
             _driverName = driverName;
+            bookedJournes.Add(new Journey { 
+                payee = passenger,
+                driver = driverName,
+                distance = miles
+            });
         }
         
         [Given(@"the rate is £(.*) per mile")]
@@ -59,13 +65,34 @@ namespace TheProject.Test.Features
 
             expectedInvoice.CompareToSet(invoices);
         }
+
+        [Given(@"these journeys")]
+        public void GivenTheseJourneys(Table table)
+        {
+            table.CompareToSet(bookedJournes);
+        }
+
+
+        
+
+        [Given(@"the rates are")]
+        public void GivenTheRatesAre(Table table)
+        {
+
+        }
+
     }
 
-    public class Invoice
+    public class Invoice : Journey
+    {
+        public double amount { get; internal set; }
+    }
+
+    public class Journey
     {
         public string payee { get; internal set; }
         public string driver { get; internal set; }
         public int distance { get; internal set; }
-        public double amount { get; internal set; }
+
     }
 }
