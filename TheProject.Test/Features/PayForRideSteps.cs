@@ -9,25 +9,39 @@ namespace TheProject.Test.Features
     [Binding]
     public class PayForRideSteps
     {
-        public Invoice invoiceshistory = new Invoice();
-        [Given(@"Pat has travelled (.*) miles with Charlie")]
-        public void GivenPatHasTravelledMilesWithCharlie(int p0)
+        private int _distance;
+        private double _ratePerMile;
+        private string _customer;
+        private string _driverName;
+
+        [Given(@"(.*) has travelled (.*) miles with (.*)")]
+        public void GivenPatHasTravelledMilesWithCharlie(string passenger, int miles, string driverName)
         {
-            
+            _distance = miles;
+            _customer = passenger;
+            _driverName = driverName;
         }
         
         [Given(@"the rate is £(.*) per mile")]
-        public void GivenTheRateIsPerMile(int p0)
+        public void GivenTheRateIsPerMile(double rate)
         {
-            
+            _ratePerMile = rate;
         }
         
         [When(@"Pat pays for the ride")]
         public void WhenPatPaysForTheRide()
         {
-            
+            invoices.Add(new Invoice
+            {
+                payee = _customer,
+                driver = _driverName,
+                distance = _distance,
+                amount = _ratePerMile * _distance
+            });
         }
-        
+
+        public IList<Invoice> invoices { get; set; } = new List<Invoice>();
+
         [Then(@"these are the invoices in the system")]
         public void ThenTheseAreTheInvoicesInTheSystem(Table expectedInvoice)
         {
