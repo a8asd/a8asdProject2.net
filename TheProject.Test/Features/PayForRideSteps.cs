@@ -11,11 +11,15 @@ namespace TheProject.Test.Features
     {
         private int _distance;
         private double _ratePerMile;
+        private string _customer;
+        private string _driverName;
 
-        [Given(@"Pat has travelled (.*) miles with Charlie")]
-        public void GivenPatHasTravelledMilesWithCharlie(int miles)
+        [Given(@"(.*) has travelled (.*) miles with (.*)")]
+        public void GivenPatHasTravelledMilesWithCharlie(string passenger, int miles, string driverName)
         {
             _distance = miles;
+            _customer = passenger;
+            _driverName = driverName;
         }
         
         [Given(@"the rate is £(.*) per mile")]
@@ -29,8 +33,8 @@ namespace TheProject.Test.Features
         {
             invoices.Add(new Invoice
             {
-                payee = "Pat",
-                driver = "Charlie",
+                payee = _customer,
+                driver = _driverName,
                 distance = _distance,
                 amount = _ratePerMile * _distance
             });
